@@ -1,8 +1,39 @@
 extends layout
 block style
-  link(rel='stylesheet', href='./styles/attendence.css')
+  link(rel='stylesheet', href='./styles/index.css')
 block content
-  #attendence
-
+  include ./nav.pug
+  #index
+    .container
+      .row
+        .col-xs-12.col-sm-4
+          .card
+            a.img-card(href='http://www.fostrap.com/')
+              img(src='https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg')
+            br
+            .card-content
+              h4.card-title
+                a(href='http://www.fostrap.com/')
+                  | Your title card
+              p
+                | Your description card
+            .card-read-more
+              a.btn.btn-link.btn-block(href='http://www.fostrap.com/')
+                | Read More
+        .col-xs-12.col-sm-4
+          .card
+            a.img-card(href='http://www.fostrap.com/')
+              img(src='https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg')
+            br
+            .card-content
+              h4.card-title
+                a(href='http://www.fostrap.com/')
+                  | Your title card
+              p
+                | Your description card
+            .card-read-more
+              a.btn.btn-link.btn-block(href='http://www.fostrap.com/')
+                | Read More
+        .col-xs-12.col-sm-4
+          .card
 block append js
-  script(src='./js/attendence.js')
