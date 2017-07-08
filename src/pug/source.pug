@@ -1,14 +1,14 @@
 extends ./layout
 block style
-  link(rel='stylesheet', href='/styles/index.css')
+  link(rel='stylesheet', href='/styles/source.css')
 block link
-  -var selected = 'index'
+  -var selected = 'source'
 block content
-  #infographics.main-block
+  #source.main-block
     .container
       .row
         .col-xs-12.col-sm-4
-          .card(v-for='site in infographics')
+          .card(v-for='site in datasource')
             a.img-card(v-bind:href='site.link')
               img(v-bind:src='site.img')
             br
@@ -22,5 +22,4 @@ block content
               a.btn.btn-link.btn-block(href='site.link')
                 | Read More
 block append js
-  script(src='./js/index.js')
-  
+  script(src='/js/source.js')

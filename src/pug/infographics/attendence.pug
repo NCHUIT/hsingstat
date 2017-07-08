@@ -1,0 +1,13 @@
+extends ../layout
+block style
+  link(rel='stylesheet', href='/styles/infographics/attendence.css')
+block link
+  -var selected = 'index'
+block content
+  #attendence.main-block.container
+    #attendenceBar
+    p.data-src
+      | 資料來源： 
+      a(href='/datasource/scSrc2016.html') 中興大學學代會2016年雲端資料
+block append js
+  script(src='/js/infographics/attendence.js')

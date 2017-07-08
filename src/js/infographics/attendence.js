@@ -1,4 +1,4 @@
-Highcharts.chart('attendence', {
+Highcharts.chart('attendenceBar', {
   chart: {
     type: 'bar'
   },
