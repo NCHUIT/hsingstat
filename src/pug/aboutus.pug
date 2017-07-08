@@ -1,6 +1,8 @@
 extends layout
 block style
   link(rel='stylesheet', href='./styles/aboutus.css')
+block link
+  -var selected = 'aboutus'
 block content
   include ./nav.pug
   #aboutus

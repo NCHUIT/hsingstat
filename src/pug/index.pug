@@ -1,6 +1,8 @@
 extends layout
 block style
   link(rel='stylesheet', href='./styles/index.css')
+block link
+  -var selected = 'index'
 block content
   include ./nav.pug
   #index
@@ -14,9 +16,9 @@ block content
             .card-content
               h4.card-title
                 a(href='http://www.fostrap.com/')
-                  | Your title card
+                  | 2016學代會開會出席
               p
-                | Your description card
+                | 2016學代會開會出席狀況長條圖
             .card-read-more
               a.btn.btn-link.btn-block(href='http://www.fostrap.com/')
                 | Read More
