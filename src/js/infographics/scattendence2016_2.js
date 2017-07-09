@@ -1,5 +1,5 @@
 var vm = new Vue({
-  el: '#attendence_2',
+  el: '#app',
   data() {
     return {
       datasource: [],
@@ -7,7 +7,7 @@ var vm = new Vue({
     }
   },
   mounted() {
-    $.getJSON('/data/infographics/attendence_2.json').success((data) => {
+    $.getJSON('/data/infographics/scattendence2016_2.json').success((data) => {
       this.datasource = data
     })
   }

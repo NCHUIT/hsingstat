@@ -9,7 +9,7 @@ const paths = {
     js: './src/js/**',
     data: './src/data/**',
     pug: './src/pug/**',
-    images: './src/img/**'
+    images: './src/img/*'
   },
   dest: {
     html: './dest',
@@ -70,6 +70,7 @@ gulp.task('webserver', () => {
 gulp.task('watch', () => {
   gulp.watch(paths.src.pug, ['pug'])
   gulp.watch(paths.src.less, ['less'])
+  gulp.watch(paths.src.data, ['data'])
   gulp.watch(paths.src.js, ['scripts'])
 })
 

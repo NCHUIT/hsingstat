@@ -1,5 +1,5 @@
 var vm = new Vue({
-  el: '#infographics',
+  el: '#app',
   data() {
     return {
       infographics: []
@@ -9,5 +9,5 @@ var vm = new Vue({
     $.getJSON('/data/infographics.json').success((data) => {
       this.infographics = data
     })
-  },
+  }
 })

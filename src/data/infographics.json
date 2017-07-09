@@ -2,13 +2,19 @@
   {
     "title": "2016學代會開會出席狀況",
     "description": "2016學代會開會出席狀況長條圖",
-    "link": "/infographics/attendence_1.html",
+    "link": "/infographics/scattendence2016_1.html",
     "img": "/img/graphic_1.jpg"
   },
   {
     "title": "2016學代會開會出席狀況",
     "description": "2016學代會開會出席狀況表格",
-    "link": "/infographics/attendence_2.html",
+    "link": "/infographics/scattendence2016_2.html",
+    "img": "/img/graphic_2.jpg"
+  },
+  {
+    "title": "2016中學生會歲出預算表格",
+    "description": "2016中興大學學生會預算表格",
+    "link": "/infographics/sgbudget2016_1.html",
     "img": "/img/graphic_2.jpg"
   }
 ]
