@@ -14,12 +14,12 @@ block content
             br
             .card-content
               h4.card-title
-                a(href='site.link')
+                a(v-bind:href='site.link')
                   | {{ site.title }}
               p
                 | {{ site.description }}
             .card-read-more
-              a.btn.btn-link.btn-block(href='site.link')
+              a.btn.btn-link.btn-block(v-bind:href='site.link')
                 | Read More
 block append js
   script(src='/js/source.js')
