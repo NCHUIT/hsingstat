@@ -1,0 +1,28 @@
+extends ../layout
+block style
+  link(rel='stylesheet', href='/styles/infographics/attendence_2.css')
+block link
+  -var selected = 'index'
+block content
+  #attendence_2.main-block.container
+    h1.title 2016學代會開會出席狀況
+    #attendenceTable
+      table
+        thead
+          tr
+            th 姓名
+            th(v-for='i in info') {{ i.title }}
+        tbody
+          tr(v-for='data in datasource')
+            td {{ data.name }}
+            td(v-for='status in data.attendence', v-bind:status='status')
+              p(v-if='status === 0') 到
+              p(v-if='status === 1') 假
+              p(v-if='status === 2') 缺
+              p(v-if='status === 3') 解
+              p(v-if='status === 4') 無
+    p.data-src
+      | 資料來源： 
+      a(href='/datasource/scSrc2016.html') 中興大學學代會2016年雲端資料
+block append js
+  script(src='/js/infographics/attendence_2.js')

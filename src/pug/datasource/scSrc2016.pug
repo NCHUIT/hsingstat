@@ -6,19 +6,21 @@ block link
 block content
   #scSrc2016.main-block.container
     table
-      tr
-        th 日期
-        th 標題
-        th 連結
-        th 標記
-      tr(v-for='data in datasource')
-        td.date
-          p {{ data.date }}
-        td.title
-          p {{ data.title }}
-        td.url
-          a(v-bind:href='data.url', target='_blank') 點擊開啟
-        td.note
-          p(v-for='note in data.notes') {{ note }}
+      thead
+        tr
+          th 日期
+          th 標題
+          th 連結
+          th 問題及備註
+      tbody
+        tr(v-for='data in datasource')
+          td.date
+            p {{ data.date }}
+          td.title
+            p {{ data.title }}
+          td.url
+            a(v-bind:href='data.url', target='_blank') 點擊開啟
+          td.note
+            p(v-for='note in data.notes') {{ note }}
 block append js
   script(src='/js/datasource/sc2016.js')

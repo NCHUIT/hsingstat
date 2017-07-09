@@ -1,22 +1,33 @@
 #scSrc2016 {
   table {
     width: 100%;
+    thead {
+      background-color: rgba(221, 221, 221, 0.8);
+    }
+    tbody {
+      tr:nth-child(even) {
+        background-color: rgba(221, 221, 221, 0.3);
+      }
+    }
     th {
       text-align: center;
       font-size: 1.2em;
       width: 20%;
       padding: 10px 5px;
       
-      border-bottom: 1px #666 solid;
       &:nth-child(4) {
         width: 40%;
       }
     }
+    tr {
+      border-bottom: 1px solid rgba(0, 0, 0,.1);
+    }
     td {
       text-align: center;
+      padding: 10px 5px;
       p {
         font-size: 1.2em;
-        margin: 5px 0px;
+        margin: 0px;
       }
       &.date {
       }
@@ -30,3 +41,8 @@
     }
   }
 }
+// #EEEEEE
+// #3E467F
+// #395EA6
+// #2EA1D9
+// #95EFCE
