@@ -1,0 +1,23 @@
+extends ../layout
+block style
+  link(rel='stylesheet', href='/styles/datasource/soursetable.css')
+block link
+  -var selected = 'source'
+block content
+  .container.soursetable
+    table
+      thead
+        tr
+          th 日期
+          th 標題
+          th 連結
+      tbody
+        tr(v-for='data in datasource')
+          td.date
+            p {{ data.date }}
+          td.title
+            p {{ data.title }}
+          td.url
+            a(:href='data.url', target='_blank') 點擊開啟
+block append js
+  script(src='/js/datasource/scSrc2016_1.js')

@@ -7,16 +7,16 @@ block content
   #sgbudget2016_1.container
     h1.title 2016中學生會歲出預算
     ul.nav.nav-pills
-      li(role='presentation', :class='{ active: active === 0 }', @click='active = 0')
+      li(role='presentation', :class='{ active: active === 0 }', @click='active = 0; keyword = "";')
         a(href='#') 總科目表
-      li(role='presentation', :class='{ active: active === 1 }', @click='active = 1')
+      li(role='presentation', :class='{ active: active === 1 }', @click='active = 1; keyword = "";')
         a(href='#') 只看款
-      li(role='presentation', :class='{ active: active === 2 }', @click='active = 2')
+      li(role='presentation', :class='{ active: active === 2 }', @click='active = 2; keyword = "";')
         a(href='#') 只看科
     .row
       .col-xs-12.col-sm-6.col-md-4
         .input-group
-          input.form-control(type='text', placeholder='搜尋款科目名稱...')
+          input.form-control(type='text', placeholder='搜尋款科目名稱...', v-model='keyword')
           span.input-group-btn
             button.btn(type='button') Search
     
@@ -25,7 +25,7 @@ block content
         tr
           th(v-for='title in titles') {{ title }}
       tbody
-        tr(v-for='data in table_all', v-if='active === 0')
+        tr(v-for='data in tableAll', v-if='active === 0')
           td
             p {{ data.dept }}
           td
@@ -41,7 +41,7 @@ block content
                 | (
                 | {{ data.diffPercent }}
                 | )
-        tr(v-for='data in table_dept', v-if='active === 1')
+        tr(v-for='data in tableDept', v-if='active === 1')
           td
             p {{ data.dept }}
           td
@@ -53,7 +53,7 @@ block content
                 | (
                 | {{ data.diffPercent }}
                 | )
-        tr(v-for='data in table_subject', v-if='active === 2')
+        tr(v-for='data in tableSubject', v-if='active === 2')
           td
             p {{ data.dept }}
           td

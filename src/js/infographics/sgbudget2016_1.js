@@ -7,13 +7,53 @@ var vm = new Vue({
       table_all: [],
       table_dept: [],
       table_subject: [],
-      budgetData: []
+      budgetData: [],
+      keyword: ''
     }
   },
   computed: {
-    titles: function () {
+    titles() {
       let title = [['款', '科', '目', '金額', '前一年差距'], ['款別', '金額', '前一年差距'], ['款', '科', '金額', '前一年差距']]
       return title[this.active]
+    },
+    tableAll() {
+      if (this.keyword !== '') {
+        let filter = []
+        _.each(this.table_all, (val) => {
+          if (this.haveKeyword(val.dept, val.subject, val.item, this.keyword)) {
+            filter.push(val)
+          }
+        })
+        return filter
+      }else {
+        return this.table_all
+      }
+    },
+    tableDept() {
+      if (this.keyword !== '') {
+        let filter = []
+        _.each(this.table_all, (val) => {
+          if (this.haveKeyword(val.dept, '', '', this.keyword)) {
+            filter.push(val)
+          }
+        })
+        return filter
+      }else {
+        return this.table_dept
+      }
+    },
+    tableSubject() {
+      if (this.keyword !== '') {
+        let filter = []
+        _.each(this.table_all, (val) => {
+          if (this.haveKeyword(val.dept, val.subject, '', this.keyword)) {
+            filter.push(val)
+          }
+        })
+        return filter
+      }else {
+        return this.table_all
+      }
     }
   },
   mounted() {
@@ -159,6 +199,13 @@ var vm = new Vue({
       let diffPercent = prefix + (diffPrice / amount * 100).toFixed(2) + '%'
 
       return diffPercent
-    }
+    },
+    haveKeyword(dept, subject, item, keyword) {
+      if ((dept.search(keyword) != -1) || (subject.search(keyword) != -1) || (item.search(keyword) != -1)) {
+        return true
+      }
+      return false
+    },
+    
   }
 })

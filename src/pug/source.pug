@@ -7,8 +7,8 @@ block content
   #source
     .container
       .row
-        .col-xs-12.col-sm-4
-          .card(v-for='site in datasource')
+        .col-xs-12.col-sm-4(v-for='site in datasource')
+          .card
             a.img-card(:href='site.link')
               img(:src='site.img')
             br
