@@ -9,17 +9,17 @@ block content
       .row
         .col-xs-12.col-sm-4(v-for='site in infographics')
           .card
-            a.img-card(v-bind:href='site.link')
-              img(v-bind:src='site.img')
+            a.img-card(:href='site.link')
+              img(:src='site.img')
             br
             .card-content
               h4.card-title
-                a(v-bind:href='site.link')
+                a(:href='site.link')
                   | {{ site.title }}
               p
                 | {{ site.description }}
             .card-read-more
-              a.btn.btn-link.btn-block(v-bind:href='site.link')
+              a.btn.btn-link.btn-block(:href='site.link')
                 | Read More
 block append js
   script(src='./js/index.js')
