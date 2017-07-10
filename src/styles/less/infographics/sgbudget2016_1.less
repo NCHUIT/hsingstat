@@ -1,0 +1,56 @@
+#sgbudget2016_1 {
+  .title {
+    text-align: center;
+    font-size: 1.6em;
+  }
+  .nav, .input-group {
+    margin-bottom: 10px;
+  }
+  .nav-pills {
+    li {
+      a {
+        color: #333;
+      }
+      &.active a {
+        color: #ededed;
+        background-color: #b1b1b1;
+      }
+    }
+  }
+  table {
+    width: 100%;
+    thead {
+      tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(221, 221, 221, 0.8);
+      }
+    }
+    tbody {
+      tr:nth-child(even) {
+        background-color: rgba(221, 221, 221, 0.3);
+      }
+    }
+    th {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 10px 5px;
+      
+    }
+    td {
+      text-align: center;
+      padding: 10px 5px;
+      p {
+        font-size: 1.2em;
+        margin: 0px;
+      }
+      span {
+        &.lower {
+          color: #ff0000;
+        }
+        &.upper {
+          color: #008000;
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ block content
         tbody
           tr(v-for='data in datasource')
             td {{ data.name }}
-            td(v-for='status in data.attendence', v-bind:status='status')
+            td(v-for='status in data.attendence', :status='status')
               p(v-if='status === 0') 到
               p(v-if='status === 1') 假
               p(v-if='status === 2') 缺
@@ -24,5 +24,6 @@ block content
     p.data-src
       | 資料來源： 
       a(href='/datasource/scSrc2016.html') 中興大學學代會2016年雲端資料
+      | 如有錯誤歡迎回報
 block append js
   script(src='/js/infographics/scattendence2016_2.js')

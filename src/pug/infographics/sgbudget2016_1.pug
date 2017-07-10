@@ -1,13 +1,75 @@
 extends ../layout
 block style
-  //- link(rel='stylesheet', href='/styles/infographics/attendence.css')
+  link(rel='stylesheet', href='/styles/infographics/sgbudget2016_1.css')
 block link
   -var selected = 'index'
 block content
-  //- #attendence.container
-  //-   #attendenceBar
-  //-   p.data-src
-  //-     | 資料來源： 
-  //-     a(href='/datasource/scSrc2016.html') 中興大學學代會2016年雲端資料
+  #sgbudget2016_1.container
+    h1.title 2016中學生會歲出預算
+    ul.nav.nav-pills
+      li(role='presentation', :class='{ active: active === 0 }', @click='active = 0')
+        a(href='#') 總科目表
+      li(role='presentation', :class='{ active: active === 1 }', @click='active = 1')
+        a(href='#') 只看款
+      li(role='presentation', :class='{ active: active === 2 }', @click='active = 2')
+        a(href='#') 只看科
+    .row
+      .col-xs-12.col-sm-6.col-md-4
+        .input-group
+          input.form-control(type='text', placeholder='搜尋款科目名稱...')
+          span.input-group-btn
+            button.btn(type='button') Search
+    
+    table
+      thead
+        tr
+          th(v-for='title in titles') {{ title }}
+      tbody
+        tr(v-for='data in table_all', v-if='active === 0')
+          td
+            p {{ data.dept }}
+          td
+            p {{ data.subject }}
+          td
+            p {{ data.item }}
+          td
+            p {{ data.amount }}
+          td
+            p
+              | {{ data.diffPrice }}
+              span(:class='data.diffPriceColor')
+                | (
+                | {{ data.diffPercent }}
+                | )
+        tr(v-for='data in table_dept', v-if='active === 1')
+          td
+            p {{ data.dept }}
+          td
+            p {{ data.amount }}
+          td
+            p
+              | {{ data.diffPrice }}
+              span(:class='data.diffPriceColor')
+                | (
+                | {{ data.diffPercent }}
+                | )
+        tr(v-for='data in table_subject', v-if='active === 2')
+          td
+            p {{ data.dept }}
+          td
+            p {{ data.subject }}
+          td
+            p {{ data.amount }}
+          td
+            p
+              | {{ data.diffPrice }}
+              span(:class='data.diffPriceColor')
+                | (
+                | {{ data.diffPercent }}
+                | )
+    p.data-src
+      | 資料來源： 
+      a(href='https://drive.google.com/drive/folders/0B370vEVixLOxRUUzT205eWs0cTQ') 2016年中興大學學生會歲出預算
+      | 如有錯誤歡迎回報
 block append js
-  //- script(src='/js/infographics/attendence.js')
+  script(src='/js/infographics/sgbudget2016_1.js')
