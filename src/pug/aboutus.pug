@@ -1,9 +1,106 @@
 extends layout
 block style
   link(rel='stylesheet', href='./styles/aboutus.css')
+  link(rel='stylesheet', href='./styles/aboutus_cat.css')
 block link
   -var selected = 'aboutus'
 block content
   #aboutus
-    
+    .catbackground
+      .artboard
+        .window
+          .window__outside.outside
+            .outside__moon
+            .outside__clouds.cloud
+              .cloud__one
+              .cloud__two
+              .cloud__three
+              .cloud__four
+              .cloud__five
+            .outside__trees.trees
+              .trees__one
+              .trees__two
+              .trees__three
+              .trees__four
+              .trees__five
+            .outside__stars.stars
+              .star.stars__one
+              .star.stars__two
+              .star.stars__three
+              .star.stars__four
+              .star.stars__five
+              .star.stars__six
+              .star.stars__seven
+              .star.stars__eight
+              .star.stars__nine
+              .star.stars__ten
+              .star.stars__eleven
+              .star.stars__twelve
+              .star.star__thirteen
+              .star.star__fourteen
+              .star.star__fifteen
+          .window__glass.window__glass-one
+          .window__glass.window__glass-two
+          .cat
+            .cat__head
+              .cat__eyes
+                .cat__eye.cat__eye-left
+                .cat__eye.cat__eye-right
+              .cat__ears
+                .cat__ear.cat__ear-left
+                .cat__ear.cat__ear-right
+            .cat__body
+            .cat__tail
+              .line-one
+                .line-one
+                  .line-one
+                    .line-one
+                      .line-one
+                        .line-one
+                          .line-one
+                            .line-one
+                              .line-one
+                                .line-one
+                                  .line-two
+                                    .line-two
+                                      .line-two
+                                        .line-two
+                                          .line-two
+                                            .line-two
+                                              .line-two
+                                                .line-two
+                                                  .line-two
+                                                    .line-two
+                                                      .line-two
+                                                        .line-two
+                                                          .line-two
+          .window__sill.sill
+            .sill__one
+      .credits
+        | Created with 
+        span.love
+        |  by 
+        a(href='https://codepen.io/ivanodintsov') Ivan Odintsov
+        |   ·  Original by 
+        a(href='https://dribbble.com/shots/1848905-Cat-Antics') Motion Authors
+    .container
+      h1.title 關於我們
+      p
+        | 為了建立以及推廣資訊公開，並善加活用中興大學提供的各項資訊，希望可以透過比較平易近人的圖表視覺化方式呈現。
+      h2 參考資料
+      ul
+        li
+          a(href='http://www.osa.nchu.edu.tw/osa/act/rule/rule2_1_103pdf/13.pdf') 中興大學學生會資訊公開法
+        li
+          a(href='http://wiki.nchusg.org') 中興大學學生會wiki
+        li
+          a(href='http://secret.nchu.edu.tw/info/01school.html') 中興大學校務與財務資訊公開平台
+      p
+        | 如有對本網站有任何問題或是資料有誤請歡迎回報至
+        a.mail(href='hsingstat@gmail.com') abc@gmail.com
+      a(href='https://creativecommons.org/licenses/by-nc-sa/4.0/')
+        img(src='/img/cc-by-nc-sa.png', alt='知識共享署名-非商業性使用-相同方式共享', width='88', height='31')
+
+      
+
 block append js
